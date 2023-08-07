@@ -1,0 +1,58 @@
+## Execute Log In
+POST http://localhost:3001/api/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "username": "john.doe@polito.it",
+    "password": "password"
+}
+###
+
+## Checking if user is still logged-in.
+GET http://localhost:3001/api/sessions/current HTTP/1.1
+###
+
+## Execute Log Out.
+DELETE http://localhost:3001/api/sessions/current HTTP/1.1
+
+###
+GET http://localhost:3001/api/planes
+
+
+###
+GET http://localhost:3001/api/planes/locale/reservations
+
+###
+GET http://localhost:3001/api/users/reservations
+
+
+###
+DELETE http://localhost:3001/api/reservations/internazionale
+
+###
+POST http://localhost:3001/api/reservations 
+content-type: application/json
+
+{
+    "planeType": "locale",
+    "seats":[
+        {
+        "fila":5,
+        "posto":2
+    },
+       {
+        "fila":6,
+        "posto":2
+    }
+    ]
+    
+}
+
+###
+DELETE http://localhost:3001/api/reservations
+
+###
+PUT http://localhost:3001/api/planes
+content-type: application/json
+
+{}
